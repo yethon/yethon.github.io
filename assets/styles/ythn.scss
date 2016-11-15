@@ -1,185 +1,141 @@
 //colors
-$white: white;
-$pink: #E0B6B8;
+$dark_grey: #3d3f4a;
+$medium_grey: #7f8291;
 
 //fonts
-$font_0: 'Monoton';
-$font_1: 'Gruppo';
+$font_0: 'Amatica SC', cursive;
+$font_1: 'Roboto Slab', serif;
 
 body {
   font-family: $font_1, sans-serif;
-  background-image: url('./img/CosmicOrchid-min.jpg');
+  background: url('./img/the_boy.jpg') no-repeat;
   background-size: cover;
-  background-color: $pink;
+  background-color: $medium_grey;
 }
 
-.center {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: nowrap
+h1 {
+  margin: 0;
+}
+
+h5 {
+  margin: 0;
 }
 
 .landing-page {
-  @extend .center;
   text-align: center;
+  color: $dark_grey;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
   height: 100vh;
-  color: $white;
+  align-items: center;
+}
+
+.marquee {
+  margin: auto;
+  a {
+    color: $dark_grey;
+    text-decoration:none;
+  }
+  a:hover {
+    color: $medium_grey;
+  }
 }
 
 .landing-page__title {
-  white-space: nowrap;
-  margin-top: 25vh;
-  h1 {
-    font-weight: 300 !important;
-    font-family: $font_0;
-    display: inline;
-    font-weight: bold;
-    vertical-align: middle;
-    font-size: 3rem;
+  font-family: $font_0;
+}
+
+@media (min-width: 320px) and (orientation: portrait) {
+  h5 {
+    margin-top: 0.5rem;
   }
-  a {
-    text-decoration:none;
-    color: $white;
+
+  .focus {
+    width: 67vw;
   }
-  a:hover {
-    color: $pink;
+
+  .remainder {
+    width: 33vw;
   }
-}
 
-.landing-page__text {
-  margin-top: 1rem;
-}
-
-img {
-  max-width: 5rem;
-}
-
-h4 {
-  text-transform: uppercase;
-  font-size: 2rem;
-}
-
-/* bug */
-section {
-  text-align: center;
-  &.landing-page {
-    display: flex;
+  .marquee {
+    width: 22vw;
   }
-}
 
-.neon-pink {
-  color: $white;
-  /*Glow*/
-  text-shadow: 0 0 10px #ffffff,
-  0 0 20px  #ffffff,
-  0 0 30px  #ffffff,
-  0 0 40px  #E0B6B8,
-  0 0 70px  #E0B6B8,
-  0 0 80px  #E0B6B8,
-  0 0 100px #E0B6B8,
-  0 0 150px #E0B6B8;
-  /*Animation*/
-  animation: neonAnimation 1.5s ease-in-out infinite alternate;
-}
-
-@keyframes neonAnimation {
-  from {
-    text-shadow: 0 0 10px #ffffff,
-    0 0 20px  #ffffff,
-    0 0 30px  #ffffff,
-    0 0 40px  #E0B6B8,
-    0 0 70px  #E0B6B8,
-    0 0 80px  #E0B6B8,
-    0 0 100px #E0B6B8,
-    0 0 150px #E0B6B8;
-  }
-  to {
-    text-shadow: 0 0 5px #ffffff,
-    0 0 10px #ffffff,
-    0 0 15px #ffffff,
-    0 0 20px #E0B6B8,
-    0 0 35px #E0B6B8,
-    0 0 40px #E0B6B8,
-    0 0 50px #E0B6B8,
-    0 0 75px #E0B6B8;
-  }
-}
-
-/* make it weird */
-.spin {
-  animation-name: spin;
-  animation-duration: 5s;
-  display: inline-block;
-  animation-iteration-count: infinite;
-}
-
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-@media(min-width: 400px) {
   .landing-page__title {
-    h1 {
-      font-size: 4rem;
-    }
+    font-size: 1rem;
   }
+
   .landing-page__text {
-    h4 {
-      font-size: 3rem;
-    }
-    h5 {
-      font-size: 2rem;
-    }
-  }
-  img {
-    max-width: 5rem;
+    font-size: 0.5rem;
   }
 }
 
-/* Larger than phablet (also point when grid becomes active) */
-@media (min-width: 550px) {
+@media (min-width: 320px) and (orientation: landscape) {
+  .focus {
+    width: 20vw;
+  }
+
+  .remainder {
+    width: 80vw;
+  }
+}
+
+@media (min-width: 768px) and (orientation: portrait) {
+  .focus {
+    width: 50vw;
+  }
+
+  .remainder {
+    width: 50vw;
+  }
+
   .landing-page__title {
-    h1 {
-      font-size: 5rem;
-    }
+    font-size: 2rem;
+  }
+
+  .landing-page__text {
+    font-size: 1.25rem;
   }
 }
 
-/* Larger than tablet */
-@media (min-width: 750px) {
+@media (min-width: 768px) and (orientation: landscape) {
+  .focus {
+    width: 33vw;
+  }
+
+  .remainder {
+    width: 67vw;
+  }
+
   .landing-page__title {
-    h1 {
-      font-size: 7rem;
-    }
+    font-size: 2rem;
   }
-  img {
-    max-width: 6rem;
+
+  .landing-page__text {
+    font-size: 1.25rem;
   }
 }
 
-/* Larger than desktop */
 @media (min-width: 1000px) {
-  .landing-page__title {
-    h1 {
-      font-size: 10rem;
-    }
+  h1 {
+    font-size: 5rem;
   }
-  .landing-page__text {
-    h4 {
-      font-size: 4rem;
-    }
-    h5 {
-      font-size: 3rem;
-    }
+
+  h5 {
+    font-size: 1.5rem;
   }
-  img {
-    max-width: 8rem;
+}
+
+@media (min-width: 1600px) {
+  h1 {
+    font-size: 7rem;
+  }
+
+  h5 {
+    font-size: 2rem;
   }
 }

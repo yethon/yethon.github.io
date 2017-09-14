@@ -1,6 +1,6 @@
 var gulp         = require('gulp');
 var concatCss    = require('gulp-concat-css');
-var minifyCSS    = require('gulp-minify-css');
+// var minifyCSS    = require('gulp-minify-css');
 var browserSync  = require('browser-sync');
 var sass         = require('gulp-sass');
 var autoprefixer = require('gulp-autoprefixer');
@@ -25,7 +25,7 @@ gulp.task('styles', function () {
     cascade: false
   }))
   .pipe(concatCss('site.min.css'))
-  .pipe(minifyCSS({debug: true}))
+  // .pipe(minifyCSS({debug: true}))
   .pipe(gulp.dest('./dist/assets'))
   .pipe(browserSync.stream());
 });

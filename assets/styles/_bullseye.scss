@@ -1,0 +1,21 @@
+.bulls-eye {
+  background-image: url("./img/bulls_eye.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.5;
+  height: 25vh;
+  width: 25vw;
+  animation-name: spin;
+  animation-duration: 6000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes spin {
+  from {
+    transform:rotate(0deg);
+  }
+  to {
+    transform:rotate(360deg);
+  }
+}

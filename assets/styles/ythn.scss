@@ -15,14 +15,6 @@ body {
   background-color: $medium_grey;
 }
 
-h1 {
-  margin: 0;
-}
-
-h5 {
-  margin: 0;
-}
-
 .landing-page {
   color: $dark_grey;
 }
@@ -40,28 +32,26 @@ h5 {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 
   height: 100vh;
   width: 80vw;
 
-  a {
-    color: $dark_grey;
-    text-decoration:none;
-  }
-  a:hover {
-    color: $medium_grey;
-  }
+  font-family: $font_0;
+  text-align: center;
+  font-size: 10vw;
+
+  // a {
+    // color: $dark_grey;
+    // text-decoration:none;
+  // }
+  // a:hover {
+    // color: $medium_grey;
+  // }
 }
 
 .landing-page__title {
-  position:absolute;
-  top:50%;
-  left:60%;
-  transform: translateX(-50%) translateY(-50%);
-
-  font-family: $font_0;
-  text-align: center;
-  font-size: 3vw;
+  margin-bottom: 1vh;
 }
 
 @media screen and (orientation:portrait) {
@@ -70,8 +60,8 @@ h5 {
   }
 
   .landing-page__title {
-    top:50%;
-    left:85%;
+    // top:50%;
+    // left:85%;
   }
 }
 
@@ -85,7 +75,7 @@ and (orientation : portrait) {
   }
 
   .landing-page__title {
-    top:50%;
-    left:75%;
+    // top:50%;
+    // left:75%;
   }
 }
